@@ -1,0 +1,22 @@
+name: Testing
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  latest-stable:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-22.04]
+
+    steps:
+    - name: stepA
+      run: |
+        exit 1
+
+    - name: stepB
+      run: |
+        echo "i am in step B"
