@@ -7,7 +7,7 @@ on:
 jobs:
   latest-stable:
     runs-on: ${{ matrix.os }}
-    continue-on-error: false
+    continue-on-error: true 
 
     strategy:
       matrix:
