@@ -7,10 +7,10 @@ on:
 jobs:
   latest-stable:
     runs-on: ${{ matrix.os }}
-    continue-on-error: true 
+    #continue-on-error: true 
 
     strategy:
-      fail-fast: false
+      #fail-fast: false
       matrix:
         os: [ubuntu-22.04]
 
