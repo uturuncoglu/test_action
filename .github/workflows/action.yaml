@@ -7,6 +7,7 @@ on:
 jobs:
   latest-stable:
     runs-on: ${{ matrix.os }}
+    continue-on-error: false
 
     strategy:
       matrix:
@@ -18,5 +19,6 @@ jobs:
         exit 1
 
     - name: stepB
+      #if: ${{ success() }}
       run: |
         echo "i am in step B"
