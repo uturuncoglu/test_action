@@ -17,7 +17,7 @@ jobs:
     steps:
     - name: stepA
       run: |
-        touch test.log
+        touch  ${{ github.workspace }}/test.log
         exit 1
 
     - name: stepB
@@ -29,4 +29,5 @@ jobs:
       uses: actions/upload-artifact@v3
       if: ${{ always() }}
       with:
-        name: test.log
+        name: test artifact
+        path: ${{ github.workspace }}/test.log
