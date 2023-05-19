@@ -17,6 +17,7 @@ jobs:
     steps:
     - name: stepA
       run: |
+        touch test.log
         exit 1
 
     - name: stepB
@@ -26,6 +27,6 @@ jobs:
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
-      #if: ${{ success() }}
+      if: ${{ always() }}
       with:
         name: test.log
